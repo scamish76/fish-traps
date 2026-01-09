@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PRP",
+    "IHI",
+    "PCP"
+  ],
+  "key": {
+    "P": "#minecraft:planks",
+    "R": "minecraft:fishing_rod",
+    "I": "minecraft:iron_bars",
+    "H": "minecraft:hopper",
+    "C": "#c:chests"
+  },
+  "result": {
+    "id": "fishtraps:fish_trap"
+  }
+}

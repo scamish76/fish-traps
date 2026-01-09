@@ -1,0 +1,8 @@
+{
+  "block.fishtraps.fish_trap": "Fish Trap",
+  "item.fishtraps.fish_trap": "Fish Trap",
+  "itemGroup.fishtraps.fish_traps": "Fish Traps",
+  "container.fishtraps.fish_trap": "Fish Trap",
+  "gui.fishtraps.open_water.yes": "Open Water: Active",
+  "gui.fishtraps.open_water.no": "Open Water: Inactive"
+}

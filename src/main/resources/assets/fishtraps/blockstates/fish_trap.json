@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "waterlogged=false": { "model": "fishtraps:block/fish_trap" },
+    "waterlogged=true": { "model": "fishtraps:block/fish_trap" }
+  }
+}

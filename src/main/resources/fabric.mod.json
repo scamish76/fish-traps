@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "fishtraps",
+  "version": "${version}",
+
+  "name": "Fish Traps",
+  "description": "Adds placeable fish traps that catch fish over time.",
+  "authors": ["tech_monkey"],
+
+  "license": "MIT",
+  "environment": "*",
+
+  "entrypoints": {
+    "main": [
+      "com.tech_monkey.fishtraps.FishTraps"
+    ],
+    "client": [
+      "com.tech_monkey.fishtraps.client.FishTrapsClient"
+    ]
+  },
+
+  "depends": {
+    "minecraft": "1.21.10",
+    "fabricloader": ">=0.18.1",
+    "fabric-api": ">=0.138.4+1.21.10"
+  }
+}
