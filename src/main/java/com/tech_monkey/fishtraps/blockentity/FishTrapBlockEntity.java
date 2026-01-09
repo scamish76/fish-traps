@@ -93,7 +93,7 @@ public class FishTrapBlockEntity extends BlockEntity implements SidedInventory, 
 
         @Override
         public void set(int index, int value) {
-            // Client-side values sync from server -> client via ScreenHandler; we don't accept client edits.
+            // Client-side values sync from server
             if (index == 0) openWater = (value != 0);
             if (index == 1) nextCatchTicks = value;
             if (index == 2) nextCatchTotalTicks = value;
@@ -175,7 +175,7 @@ public class FishTrapBlockEntity extends BlockEntity implements SidedInventory, 
             return false;
         }
 
-        // Your option A: 5x5 footprint, must have water at y+1 and y+2
+        // 5x5 footprint, must have water at y+1 and y+2
         return OpenWaterUtil.isTrapOpenWater(world, this.pos);
     }
 
@@ -194,7 +194,7 @@ public class FishTrapBlockEntity extends BlockEntity implements SidedInventory, 
         return true;
     }
 
-    // ---- Phase A: fishing loop ----
+    // ---- fishing loop ----
     private boolean canRun(ServerWorld world, BlockState state) {
         // Must be waterlogged
         if (!state.contains(Properties.WATERLOGGED) || !state.get(Properties.WATERLOGGED)) return false;
@@ -472,8 +472,7 @@ private void spawnBubbles(ServerWorld world) {
         ) <= 64.0D;
     }
 
-    // ---- Hopper behavior (NO BAIT) ----
-    // Top + sides can insert rod. Bottom extracts outputs.
+    // ---- Hopper behavior ----
     @Override
     public int[] getAvailableSlots(Direction side) {
         if (side == Direction.DOWN) {
@@ -482,13 +481,12 @@ private void spawnBubbles(ServerWorld world) {
             return out;
         }
 
-        // UP or SIDES: rod slot only
         return new int[]{SLOT_ROD};
     }
 
     @Override
     public boolean canInsert(int slot, ItemStack stack, Direction dir) {
-        // Phase B change: hoppers should NOT feed the trap (rod insertion is GUI/player-only).
+        // hoppers should NOT feed the trap (rod insertion is GUI/player-only).
         return false;
     }
 
@@ -539,7 +537,7 @@ private void spawnBubbles(ServerWorld world) {
 
         for (int i = 0; i < this.items.size(); i++) {
             ItemStack stack = this.items.get(i);
-            if (stack == null || stack.isEmpty()) continue; // DO NOT write air/empty stacks
+            if (stack == null || stack.isEmpty()) continue; 
             slots.add(i);
             stacks.add(stack);
         }
